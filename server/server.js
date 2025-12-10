@@ -11,7 +11,7 @@ const theatreRoutes = require("./src/Routes/theatre.routes");
 const showRoutes = require("./src/Routes/show.routes");
 const bookingRoutes = require("./src/Routes/booking.routes");
 const rateLimit = require('express-rate-limit');
-const mongoSanitize = require('express-mongo-sanitize');
+//const mongoSanitize = require('express-mongo-sanitize');
 
 
 
@@ -31,9 +31,8 @@ const apiLimiter = rateLimit({
 app.use(bodyParser.json());
 app.use(cors());
 app.use(apiLimiter);
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(mongoSanitize());
+
+//app.use(mongoSanitize());
 
 userRoutes(app);
 movieRoutes(app);
